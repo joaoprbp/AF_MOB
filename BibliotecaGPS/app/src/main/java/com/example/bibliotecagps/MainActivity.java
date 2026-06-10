@@ -39,35 +39,29 @@ public class MainActivity extends AppCompatActivity {
 
     private static final int REQUEST_LOCATION = 100;
 
-    // Views - pesquisa
     EditText etPesquisa;
     Button btnBuscar;
     RecyclerView recyclerResultados;
 
-    // Views - formulário
     TextView tvTituloSelecionado, tvAutorSelecionado, tvAnoSelecionado, tvEditoraSelecionada;
     Spinner spinnerSituacao, spinnerStatus;
     EditText etObservacao;
     TextView tvCoordenadas;
     Button btnGps, btnSalvar;
 
-    // Views - lista salva
     RecyclerView recyclerLivros;
 
-    // Adapters e listas
     SearchResultAdapter resultadoAdapter;
     LivroAdapter livroAdapter;
     List<SearchResultAdapter.BookResult> resultados = new ArrayList<>();
     List<Livro> listaLivros = new ArrayList<>();
 
-    // Estado do formulário
     String tituloSelecionado, autorSelecionado, anoSelecionado, editoraSelecionada;
     double latitude = 0, longitude = 0;
     boolean localizacaoCapturada = false;
     boolean modoEditar = false;
     String livroIdEditando;
 
-    // GPS e Firebase
     FusedLocationProviderClient fusedLocationClient;
     FirebaseFirestore db;
 

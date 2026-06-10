@@ -120,7 +120,6 @@ public class MainActivity extends AppCompatActivity {
     private void configurarRecyclerViews() {
         recyclerResultados.setLayoutManager(new LinearLayoutManager(this));
         resultadoAdapter = new SearchResultAdapter(resultados, (titulo, autor, ano, editora) -> {
-            // Preenche o formulário com o livro clicado na busca
             tituloSelecionado = titulo;
             autorSelecionado = autor;
             anoSelecionado = ano;
@@ -137,14 +136,12 @@ public class MainActivity extends AppCompatActivity {
         recyclerLivros.setLayoutManager(new LinearLayoutManager(this));
         livroAdapter = new LivroAdapter(listaLivros, new LivroAdapter.OnItemClickListener() {
             @Override
-            public void onItemClick(Livro livro) {
-                // Clique curto: preenche formulário para editar
+            public void onItemClick(Livro livro) { 
                 preencherFormularioEdicao(livro);
             }
 
             @Override
             public void onItemLongClick(Livro livro) {
-                // Clique longo: confirma exclusão
                 confirmarExclusao(livro);
             }
         });
@@ -157,7 +154,6 @@ public class MainActivity extends AppCompatActivity {
         btnSalvar.setOnClickListener(v -> salvarLivro());
     }
 
-    // ===================== BUSCA DE LIVROS =====================
 
     private void buscarLivros() {
         String query = etPesquisa.getText().toString().trim();
@@ -248,7 +244,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    // ===================== GPS =====================
 
     private void capturarLocalizacao() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
@@ -284,7 +279,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    // ===================== FIREBASE CRUD =====================
 
     private void salvarLivro() {
         if (tituloSelecionado == null || tituloSelecionado.isEmpty()) {
@@ -309,7 +303,6 @@ public class MainActivity extends AppCompatActivity {
                     .set(livro)
                     .addOnSuccessListener(unused -> {
                         Toast.makeText(this, "Livro atualizado!", Toast.LENGTH_SHORT).show();
-                        // Atualiza o item na lista local sem precisar de nova consulta
                         livro.setId(idEditando);
                         for (int i = 0; i < listaLivros.size(); i++) {
                             if (idEditando.equals(listaLivros.get(i).getId())) {
@@ -327,7 +320,6 @@ public class MainActivity extends AppCompatActivity {
                     .add(livro)
                     .addOnSuccessListener(documentReference -> {
                         Toast.makeText(this, "Livro salvo!", Toast.LENGTH_SHORT).show();
-                        // Adiciona direto na lista local sem precisar de nova consulta
                         livro.setId(documentReference.getId());
                         listaLivros.add(0, livro);
                         livroAdapter.atualizarLista(new ArrayList<>(listaLivros));
@@ -376,7 +368,6 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(this, "Erro ao excluir", Toast.LENGTH_SHORT).show());
     }
 
-    // ===================== FORMULÁRIO =====================
 
     private void preencherFormularioEdicao(Livro livro) {
         modoEditar = true;

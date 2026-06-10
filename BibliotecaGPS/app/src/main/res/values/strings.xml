@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">Biblioteca GPS</string>
+    <string name="buscar_livro">Buscar Livro</string>
+    <string name="cadastrar_livro">Cadastrar Livro</string>
+    <string name="editar_livro">Editar Livro</string>
+    <string name="nenhum_livro">Nenhum livro cadastrado.\nToque no + para adicionar.</string>
+    <string name="hint_pesquisa">Título, autor ou palavra-chave</string>
+    <string name="buscar">Buscar</string>
+    <string name="sem_resultados">Nenhum resultado encontrado</string>
+    <string name="informacoes_livro">Informações do Livro</string>
+    <string name="localizacao">Localização</string>
+    <string name="capturar_localizacao">Capturar Localização Atual</string>
+    <string name="sem_localizacao">Localização não capturada</string>
+    <string name="situacao">Onde/Como encontrou</string>
+    <string name="status_leitura">Status de Leitura</string>
+    <string name="observacao">Observação Pessoal</string>
+    <string name="hint_observacao">Escreva suas anotações sobre o livro…</string>
+    <string name="salvar">Salvar</string>
+    <string name="erro_localizacao_negada">Permissão de localização negada. Não é possível capturar as coordenadas.</string>
+    <string name="erro_sem_internet">Sem conexão com a internet.</string>
+    <string name="erro_api">Erro ao consultar a API. Tente novamente.</string>
+    <string name="erro_campos_obrigatorios">Capture a localização antes de salvar.</string>
+    <string name="livro_salvo">Livro salvo com sucesso!</string>
+    <string name="livro_atualizado">Livro atualizado com sucesso!</string>
+    <string name="livro_excluido">Livro excluído.</string>
+    <string name="confirmar_exclusao">Excluir este livro?</string>
+    <string name="sim">Sim</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="carregando">Carregando…</string>
+
+    <string-array name="situacoes">
+        <item>Biblioteca</item>
+        <item>Livraria</item>
+        <item>Aula</item>
+        <item>Indicação</item>
+        <item>Leitura em casa</item>
+        <item>Viagem</item>
+        <item>Outro</item>
+    </string-array>
+
+    <string-array name="status_leitura">
+        <item>Quero ler</item>
+        <item>Lendo</item>
+        <item>Concluído</item>
+    </string-array>
+</resources>

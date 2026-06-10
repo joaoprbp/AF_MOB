@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- ===== BUSCA DE LIVROS ===== -->
+
+        <EditText
+            android:id="@+id/et_pesquisa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Pesquisar livro" />
+
+        <Button
+            android:id="@+id/btn_buscar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Buscar" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Resultados"
+            android:textSize="16sp"
+            android:paddingTop="8dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_resultados"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <!-- ===== LIVRO SELECIONADO ===== -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Livro Selecionado"
+            android:textSize="16sp"
+            android:paddingTop="12dp" />
+
+        <TextView
+            android:id="@+id/tv_titulo_selecionado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nenhum livro selecionado"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_autor_selecionado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_ano_selecionado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_editora_selecionada"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- ===== SITUAÇÃO ===== -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Onde/Como encontrou"
+            android:paddingTop="8dp" />
+
+        <Spinner
+            android:id="@+id/spinner_situacao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- ===== STATUS DE LEITURA ===== -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status de Leitura"
+            android:paddingTop="8dp" />
+
+        <Spinner
+            android:id="@+id/spinner_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- ===== OBSERVAÇÃO ===== -->
+
+        <EditText
+            android:id="@+id/et_observacao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Observação" />
+
+        <!-- ===== GPS ===== -->
+
+        <TextView
+            android:id="@+id/tv_coordenadas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Localização não capturada"
+            android:paddingTop="8dp" />
+
+        <Button
+            android:id="@+id/btn_gps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Capturar Localização" />
+
+        <!-- ===== SALVAR ===== -->
+
+        <Button
+            android:id="@+id/btn_salvar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Salvar Livro" />
+
+        <!-- ===== LIVROS SALVOS ===== -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Livros Salvos"
+            android:textSize="16sp"
+            android:paddingTop="12dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_livros"
+            android:layout_width="match_parent"
+            android:layout_height="400dp" />
+
+    </LinearLayout>
+
+</ScrollView>
